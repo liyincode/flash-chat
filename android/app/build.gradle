@@ -6,9 +6,10 @@ if (localPropertiesFile.exists()) {
     }
 }
 
+
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
-    throw new FileNotFoundException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+    throw  FileNotFoundException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
@@ -33,20 +34,12 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "co.appbrewery.flash_chat"
+        applicationId "co.ag.flash_chat"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-<<<<<<< HEAD
-<<<<<<< HEAD
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-=======
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-=======
->>>>>>> 239b883... Removing android.support dependencies
         multiDexEnabled true
->>>>>>> 51223aa... Update for Multidex
     }
 
     buildTypes {
@@ -63,11 +56,8 @@ flutter {
 }
 
 dependencies {
-<<<<<<< HEAD
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-=======
-    implementation 'androidx.multidex:multidex:2.0.0'
->>>>>>> 239b883... Removing android.support dependencies
+//    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'com.google.firebase:firebase-firestore:21.3.1'
 }
+
+apply plugin: 'com.google.gms.google-services'
